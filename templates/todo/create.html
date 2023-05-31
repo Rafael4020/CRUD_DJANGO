@@ -1,0 +1,22 @@
+{% extends 'layout/partials/base.html' %}
+
+{%block 'title'%} Crear tarea {% endblock %}
+
+{% block 'style' %}
+{%load static %}
+<link rel="stylesheet" href="{% static 'css/form.css' %}">
+{%endblock%}
+
+{%block 'content' %}
+    
+<span class="aux-btns"><a href="{% url 'todo' %}">volver atrás</a></span>
+<form action="{% url 'todo_create' %}" method="POST">
+    {% csrf_token %}
+    <table>
+        {{form.as_table}}        
+    </table>
+    <div class="btn-wrapper">
+        <input type="submit" value="Enviar"  class="btn-send"/>
+    </div>
+</form>
+{%endblock%}

@@ -1,0 +1,15 @@
+{% extends 'layout/partials/base.html' %}
+
+{% block 'title' %} Tareas {{todo.title}} {% endblock %}
+
+{% block 'content' %}
+<span class="aux-btns"><a href="{% url 'todo' %}">volver atrás</a></span>
+<ul class="lista">    
+    <li><b>Titulo: </b>{{todo.title}}</li>
+    <li><b>Descripción: </b>{{todo.description}}</li>
+    <li><b>Fecha de creación: </b>{{todo.date}}</li>
+    <li><b>Fehca de finalización: </b>{{todo.estimated_end}}</li>
+    <li><b>Prioridad: </b>{{todo.priority}}</li>
+            
+</ul>
+{% endblock %}
